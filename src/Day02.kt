@@ -37,9 +37,7 @@ fun main() {
     var score = 0
     testInput.forEach {
         val myChar = it[2]
-        val mine = me.toRPS(myChar) ?: return@forEach
-        val theirChar = they.toRPS(it[0]) ?: return@forEach
-        val roundScore = roundScore(mine, theirChar)
+        val roundScore = roundScore(me.toRPS(myChar) ?: return@forEach, they.toRPS(it[0]) ?: return@forEach)
         score += roundScore
     }
 
